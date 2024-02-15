@@ -1,0 +1,120 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<app-not-found [visible]="!course" notFoundMessage="Product Not Found" resetLinkText="BackTo HomePage"></app-not-found>
+
+<div *ngIf="course" class="container">
+    <div class="header-container">
+        <div class="header">
+            <div class="name">
+                <h1 class="name">
+                    {{course.name}}
+                </h1>
+                <br>
+                <p class="description-text">{{course.description}}</p>
+                <p style="font-size: small;">Created by {{course.creator}}</p>
+                <div class="stars">
+                   <app-star-rating [stars]="course.stars" [size]=".9"></app-star-rating>
+                </div>
+                <p style="font-size: small;">{{course.students}} students</p>
+                <div class="lang">
+                    <p style="font-size: small;">Last Updated {{course.updated}}</p>
+                    <p style="font-size: small; margin-left: 1rem;"><i class="material-icons" style="font-size: .8rem;">&#xe894;</i>
+                        {{course.language}}</p>
+                </div>
+                
+            </div>
+           
+            <div class="img">
+                <img [src]="course.imageUrl" [alt]="course.name" style="width: 23rem;"> 
+                <div class="price">
+                    <span>{{course.price|currency}}</span>
+                </div>
+                <div class="add">
+                    <button (click)="addToCart()">Add to cart</button>
+                    
+                </div>
+                <div class="now">
+                    <button (click)="addToCart()" routerLink="/cart-page">Buy now</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="details-container">
+        <div class="what">
+            <h2>What you'll learn</h2>
+            <div class="learn">
+                <p>✔ You will learn how to properly work with different layers</p>
+                <p>✔ You will be able to add or delete elements from a picture</p>
+                <p>✔ You will learn how to change the coloration of a picture or a part of a picture</p>
+                <p>✔ Be able to transform a low quality picture into a high quality picture</p>
+                <p>✔ You will learn how to import and modify one or many pictures at the same time</p>
+                <p>✔ You will learn the most important tools and shortcuts that are used in Photoshop</p>
+                <p>✔ You will learn different tricks to be able to retouch any picture</p>
+            </div>
+        </div>
+        <div class="requirements">
+            <h2>Requirements</h2>
+            <ul>
+                <li>Having a computer and photoshop installed</li>
+                <li>Having a certain passion for Design</li>
+                <li>Wanting to learn the Basics of Photoshop</li>
+            </ul>
+        </div>
+        <div class="description">
+            <h2>Description</h2>
+            <p>Learning the basics of Adobe Photoshop is definitely not easy, especially if you have no prior knowledge in this field. But, this course can teach you everything you need to know to start using photoshop and making your own projects with pictures that you take yourself or pictures that you have simply found on the internet. If you:
+                <br>
+                <br>
+                - Are a student and need to learn how to properly use Photoshop
+                <br>
+                <br>
+                - Want to modify your own pictures to increase the quality
+                <br>
+                <br>
+                - Always wanted to learn about design with photoshop
+                <br>
+                <br>
+                - Want to start your business in the field of design but need prior knowledge before
+                <br>
+                <br>
+                - Any other reason
+                <br>
+                <br>
+                Then you are at the right place and will definitely love this course ! Not only you will learn all the basics of how to properly use Adobe Photoshop but you will have the opportunity to practice everything that you have learned. Indeed, you will, by the end of this course, be able to retouch and modify any picture that you want.
+                
+                </p>
+        </div>
+    </div>
+      
+
+    <!-- <div class="details">
+        <div class="header">
+            <span class="name">
+                {{course.name}}
+            </span>
+            <span class="favorite {{course.favorite ? '' : 'not'}}" (click)="not()">
+                ❤
+            </span>
+
+        </div>
+
+        <div class="origins">
+            <span *ngFor = "let origin of course.origins">
+                {{origin}}
+            </span>
+        </div>
+    
+        <div class="tags">
+            <a routerLink="/tag/{{course.tags}}">{{course.tags}}</a>
+        </div>
+        <div class="price">
+            <span>{{course.price|currency}}</span>
+        </div>
+    
+        <button>Add to cart</button>
+
+    </div> -->
+   
+</div>

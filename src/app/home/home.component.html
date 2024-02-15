@@ -1,0 +1,52 @@
+
+<div class="container1">
+    <h1>A broad selection of courses</h1>
+    <p>Choose from over 210,000 online video courses with new additions published every month</p>
+</div>
+<div class="container2">
+    <div class="cont2img"> <img src="/assets/images/home-back.jpg"></div>
+    <div class="overimg">
+        <h1>Skills that drive you forward</h1>
+        <p>Technology and the world of work change fast — with us, you’re faster. Get the skills to achieve goals and stay competitive.</p>
+    </div>
+</div>
+<div class="companies">
+    <img src="/assets/images/companies.png" width="100%">
+</div>
+
+<app-not-found [visible]="!courses || courses.length<=0" resetLinkText="Reset Search"></app-not-found>
+<div *ngIf="courses.length>0" class="container"> 
+<app-tags2></app-tags2>
+<ul>
+    <li *ngFor="let course of courses">
+        <a routerLink="/course/{{course.id}}">
+            <img src="{{course.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{course.name}}
+                </div>
+                <span class="favorite {{course.favorite ? '' : 'not'}}">
+                    ❤
+                </span>
+                <div class="stars">
+                    <app-star-rating [stars]="course.stars"></app-star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let creator of course.creator">
+                            {{creator}}
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="price">
+                    <span>
+                        {{course.price|currency}}
+                    </span>
+                </div>
+            </div>
+        </a>   
+    </li>
+</ul>
+</div>
+

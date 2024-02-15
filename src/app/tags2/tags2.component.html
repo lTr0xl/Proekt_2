@@ -1,0 +1,11 @@
+<div class="container">
+<a class="popular" [ngClass]="[borderStyle1]" (click)="border1()" routerLink="/">
+    Most Popular
+</a>
+<a class="favorites" [ngClass]="[borderStyle2]" (click)="border2()" routerLink="/tag2/favorite">
+    Beginner Favorites
+</a>
+<a class="new" [ngClass]="[borderStyle3]" (click)="border3()" routerLink="/tag2/new">
+    New
+</a>
+</div>

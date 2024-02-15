@@ -1,0 +1,45 @@
+<div class="container">
+
+<div class="title"><h1>{{type}} Courses:</h1></div>
+<div *ngIf="type==='Blender'" class="description">
+    Take a step into the exciting world of 3D graphic design with Blender training on Monsona. Learn to use this powerful tool through online Blender classes taught by instructors with real world experience and expertise. A Blender course is just the thing to boost your 3D art and design skills and take you into a new dimension of creativity.
+</div>
+<div *ngIf="type==='Adobe Photoshop'" class="description">
+    Whether you are a professional photographer or you want to improve your selfies or snapshots, Photoshop skills help you turn your photos into slick, compelling images. Learn Photoshop from real world professionals on Monsona, and join over 10 million others improving their photographs with this exciting suite of image editing software.</div>
+<div *ngIf="type!='Adobe Photoshop' && type!='Blender' "class="description">
+    Take a step into the exciting world of 3D graphic design with Blender training on Monsona. Learn to use this powerful tool through online Blender classes taught by instructors with real world experience and expertise. A Blender course is just the thing to boost your 3D art and design skills and take you into a new dimension of creativity.
+</div>
+<app-not-found [visible]="!courses || courses.length<=0" resetLinkText="Go To HomePage"></app-not-found>
+
+<ul *ngIf="courses">    
+    <li *ngFor="let course of courses">
+        <a routerLink="/course/{{course.id}}">
+            <img src="{{course.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{course.name}}
+                </div>
+                <span class="favorite {{course.favorite ? '' : 'not'}}">
+                    ❤
+                </span>
+                <div class="stars">
+                    <app-star-rating [stars]="course.stars"></app-star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let creator of course.creator">
+                            {{creator}}
+                        </span>
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                        {{course.price|currency}}
+                    </span>
+                </div>
+            </div>
+        </a>   
+    </li>
+</ul>
+</div>
+

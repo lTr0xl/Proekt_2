@@ -1,0 +1,24 @@
+
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   /* justify-content: center; */
+    background-color:rgb(164, 0, 0);
+    box-shadow: 0 .8rem 1rem -.5rem #111;    
+
+}
+
+div a{
+    padding: .3rem 1rem;
+    font-weight: 600;
+    color:white;
+    margin-left:2rem;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+div a:hover{
+    background-color: #6a0000;
+}

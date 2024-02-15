@@ -1,0 +1,35 @@
+
+<app-not-found [visible]="!cart || cart.items.length<=0" notFoundMessage="Cart Page Is Empty!" resetLinkText="Go To HomePage"></app-not-found>
+<div class="count" *ngIf="cart.items.length===1">{{cart.items.length}} Course in Cart</div>
+<div class="count" *ngIf="cart.items.length>1">{{cart.items.length}} Courses in Cart</div>
+<div *ngIf="cart && cart.items.length>0" class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img routerLink="/course/{{cartItem.course.id}}" [src]="cartItem.course.imageUrl" [alt]="cartItem.course.name">
+            </div>
+            <div>
+                <a class="name" routerLink="/course/{{cartItem.course.id}}">
+                    {{cartItem.course.name}}
+                </a>
+            </div>
+           
+            <div>
+                {{cartItem.price|currency}}
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
+            </div>
+        
+        </li>
+
+    </ul>
+
+    <div class="checkout">
+        <div>
+            <div class="total-price">{{cart.totalPrice|currency}} </div>
+            <button>Checkout</button>
+        </div>
+    </div>
+</div>
+

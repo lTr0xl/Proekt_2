@@ -1,0 +1,101 @@
+
+.container{
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+}
+ul{
+    display:flex;
+    justify-content: center; /* centrira gi horizontalno */
+    align-items: center; /* centrira gi vertikalno */
+    flex-wrap: wrap; /* da ne gi kompresira site sliki u edna linija*/
+    list-style-type: none;
+    padding:0;
+    
+}
+
+ul li a{
+    background-image: linear-gradient(rgb(255, 57, 57),black);
+    height: 21.3rem;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin:0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+}
+
+li a:hover{
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.content{
+    padding:0.5rem 1rem;
+    position:relative;
+}
+
+.name{
+    margin-left:-0.5rem;
+    padding:.7rem;
+    margin-bottom:-.6rem;
+}
+.favorite{
+    position:absolute;
+    top:0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    color:red; 
+}
+
+.favorite.not{
+    color:gray;
+}
+
+.product-item-footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.origins{
+    flex:9;
+    margin-top: .5rem;
+}
+.origins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    color:black;
+    font-weight: bold;
+    font-size: .7rem;
+    padding:.2rem .4rem;
+    margin-right: .3rem;
+}
+
+.price{
+    color:#ffffff;
+    margin-top:0.7rem;
+}
+
+.title{
+    color:rgb(120, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    margin-left:2rem;
+    line-height: 1rem;
+    margin-right: 2rem;
+    margin-top:2.5rem;
+}
+.description{
+    border-bottom: .2rem solid black;
+    margin-left:2rem;
+    line-height: 1.5rem;
+    margin-right: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 40rem;
+    font-size: 1rem;
+}

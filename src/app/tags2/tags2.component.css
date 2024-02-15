@@ -1,0 +1,28 @@
+.container{
+    border-bottom: 0.08rem solid gray;
+    display: flex;
+    flex-wrap:wrap;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+div a{
+    font-weight: bold;
+    margin-left: 1rem;
+    
+}
+
+div a:hover{
+    color:black;
+}
+
+
+.border-default{
+    color:gray;
+    border-bottom: 0.1rem solid white;
+}
+
+.border-change{
+    color:black;
+    border-bottom: 0.1rem solid black;
+}
